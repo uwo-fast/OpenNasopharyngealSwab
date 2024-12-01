@@ -10,7 +10,10 @@
 // All units are in metric and mm unless otherwise specified
 
 // Render the desired object by changing the name of the render variable
-render = "nasal_swab";
+render = "nasal_swab"; // ["nasal_swab", "lock_handle", "both"]
+
+// Tip type: Select the tip geometry type
+tip_type = "bullet"; // ["bullet", "cone"]
 
 if (render == "nasal_swab")
 {
@@ -32,7 +35,6 @@ $fs = 0.15; // minimum size of a fragment, recommended: 0.5 is for changing vari
             // render
 
 //[Tip settings] --------------------------------------------------------------------------------------------
-tip_type = "bullet"; //[normal, bullet,cone_tip] select the tip geometry type
 tip_height = 16.25;  // Length of the tip height, recommended:16.25
 tip_radius = 1.125;  // Radius of the tip body section, recommended:1.125
 

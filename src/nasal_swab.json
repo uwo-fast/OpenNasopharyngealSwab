@@ -1,0 +1,17 @@
+{
+    "parameterSets": {
+        "nasal_swab_bullet tip": {
+            "render": "nasal_swab",
+            "tip_type": "bullet"
+        },
+        "nasal_swab_cone_tip": {
+            "render": "nasal_swab",
+            "tip_type": "cone"
+        },
+        "lock_handle": {
+            "render": "lock_handle",
+            "tip_type": "bullet"
+        }
+    },
+    "fileFormatVersion": "1"
+}

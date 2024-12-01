@@ -2,11 +2,12 @@
 
 This repository hosts the open-source design files, instructions, and validation results for a parametric nasopharyngeal swab and UV curing system. The designs are tailored for distributed manufacturing using accessible 3D printing technologies. Originally developed to address swab shortages during the COVID-19 pandemic, this project aims to provide a low-cost, scalable solution for clinical testing and other medical applications.
 
-
+![View of Swab on Build Plate in Slicer](slicerProfile\Prusa_Build_Plate_Capture.JPG)
 
 ## Features
 
 - **Parametric Design:** Fully customizable in OpenSCAD to adapt swab and handle features for specific needs.
+  - Tested with [github.com/CameronBrooks11/OpenSCAD-Batch-Export](https://github.com/CameronBrooks11/OpenSCAD-Batch-Export)
 - **Distributed Manufacturing:** Designed for SLA 3D printers and modular UV curing systems, enabling local production with low-cost, accessible equipment.
 - **Validated Performance:** Mechanical testing ensures durability and safety for clinical applications.
 - **Open Source:** Licensed under GNU GPL v3.0 and CERN OHL v1.2 for maximum accessibility and collaboration.
