@@ -248,8 +248,11 @@ module oshw_logo_2d(d = 10.0)
             union()
             {
                 circle(r = 14.0 * d / 36.0, $fn = 20);
-                for (i = [1:7])
-                    assign(rotAngle = 45 * i + 45) rotate(rotAngle) gear_tooth_2d(d);
+                for (i = [1:7]){
+					rotAngle = 45 * i + 45;
+                    rotate(rotAngle) gear_tooth_2d(d);
+				}
+
             }
             circle(r = 10.0 * d / 72.0, $fn = 20);
             intersection()
