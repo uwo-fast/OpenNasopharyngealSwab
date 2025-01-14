@@ -2,7 +2,7 @@
 
 This repository hosts the open-source design files, instructions, and validation results for a parametric nasopharyngeal swab and UV curing system. The designs are tailored for distributed manufacturing using accessible 3D printing technologies. Originally developed to address swab shortages during the COVID-19 pandemic, this project aims to provide a low-cost, scalable solution for clinical testing and other medical applications.
 
-![View of Swab on Build Plate in Slicer](slicerProfile\Prusa_Build_Plate_Capture.JPG)
+![View of Swab on Build Plate in Slicer](slicerProfile/Prusa_Build_Plate_Capture.JPG)
 
 ## Features
 
