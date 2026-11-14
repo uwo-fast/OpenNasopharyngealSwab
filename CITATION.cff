@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this design, please cite the paper below."
+title: "Open source nasopharyngeal swab"
+type: software
+authors:
+  - family-names: "Gallup"
+    given-names: "Nicole"
+  - family-names: "Pringle"
+    given-names: "Adam M."
+  - family-names: "Oberloier"
+    given-names: "Shane"
+  - family-names: "Tanikella"
+    given-names: "Nagendra G."
+  - family-names: "Pearce"
+    given-names: "Joshua M."
+url: "https://github.com/uwo-fast/OpenNasopharyngealSwab"
+preferred-citation:
+  type: article
+  title: "Parametric nasopharyngeal swab for sampling COVID-19 and other respiratory viruses: Open source design, SLA 3-D printing and UV curing system"
+  authors:
+    - family-names: "Gallup"
+      given-names: "Nicole"
+    - family-names: "Pringle"
+      given-names: "Adam M."
+    - family-names: "Oberloier"
+      given-names: "Shane"
+    - family-names: "Tanikella"
+      given-names: "Nagendra G."
+    - family-names: "Pearce"
+      given-names: "Joshua M."
+  journal: "HardwareX"
+  volume: 8
+  start: "e00135"
+  year: 2020
+  doi: "10.1016/j.ohx.2020.e00135"
