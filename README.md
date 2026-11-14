@@ -44,6 +44,13 @@ the file set every dimension, each commented with its recommended value.
 The model was tested with
 [scadbatch](https://github.com/CameronBrooks11/scadbatch) for batch export.
 
+### Check the model
+
+`just check` renders every preset, and a slice of the swab around its breakpoint
+hole, with warnings as errors, and compares their sizes and volumes with the
+designed values (`tests/check_presets.py`). CI runs it on every pull request. It
+checks the geometry only, not how a print performs.
+
 ### Print and cure
 
 - **Swab heads:** resin. `slicerProfile/PrusaNasalSwabs.ini` is for an Original
