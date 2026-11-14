@@ -2,7 +2,7 @@
 // z = 9 mm (base_height 8 + body_breakpoint_height 1) with a 0.175 mm radius,
 // so the whole hole falls inside this slice, and moving or resizing it changes
 // the slice's volume.
-use <../src/nasal_swab.scad>
+use <../cad/nasal_swab.scad>
 
 intersection()
 {

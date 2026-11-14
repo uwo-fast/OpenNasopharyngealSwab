@@ -1,3 +1,4 @@
-# Exports and slices made from src/nasal_swab.scad
+# Exports and slices made from cad/nasal_swab.scad
 outputs/
+/*.stl
 *.sl1

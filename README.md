@@ -10,17 +10,17 @@ It was developed in 2020, when swabs were short, and published in Gallup et al.
 that the swabs need clinical verification before widespread use. This repository
 does not change that: **the design has not been clinically validated.**
 
-![A plate of swabs standing upright on the Original Prusa SL1's build plate, in PrusaSlicer](slicerProfile/Prusa_Build_Plate_Capture.JPG)
+![A plate of swabs standing upright on the Original Prusa SL1's build plate, in PrusaSlicer](docs/sl1_build_plate.jpg)
 
 ## What's here
 
 | Path | What it is |
 | --- | --- |
-| `src/nasal_swab.scad` | The OpenSCAD model: the swab (tip, breakable body and lock base) and the lock handle it fits into. |
-| `src/nasal_swab.json` | Customizer presets: `nasal_swab_bullet_tip`, `nasal_swab_cone_tip` and `lock_handle`. |
-| `slicerProfile/PrusaNasalSwabs.ini` | The PrusaSlicer settings the swab heads were sliced with. |
-| `misc/tong_handle.stl` | The tong-style handle, an alternative to the lock handle. No source here. |
-| `misc/durability_test_tube.stl` | A 10 × 10 × 42 mm test part. No source here. |
+| `cad/nasal_swab.scad` | The OpenSCAD model: the swab (tip, breakable body and lock base) and the lock handle it fits into. |
+| `cad/nasal_swab.json` | Customizer presets: `nasal_swab_bullet_tip`, `nasal_swab_cone_tip` and `lock_handle`. |
+| `cad/nasal_swab_sl1.ini` | The PrusaSlicer settings the swab heads were sliced with. |
+| `cad/tong_handle.stl` | The tong-style handle, an alternative to the lock handle. No source here. |
+| `cad/durability_test_tube.stl` | A 10 × 10 × 42 mm test part. No source here. |
 
 The UV curing box the paper describes is in its own repository,
 [uwo-fast/uv-curing-box](https://github.com/uwo-fast/uv-curing-box).
@@ -29,12 +29,12 @@ The UV curing box the paper describes is in its own repository,
 
 ### Export the parts
 
-Open `src/nasal_swab.scad` in OpenSCAD and pick a preset in the Customizer, or
+Open `cad/nasal_swab.scad` in OpenSCAD and pick a preset in the Customizer, or
 export from the command line:
 
 ```sh
-openscad -p src/nasal_swab.json -P nasal_swab_bullet_tip -o nasal_swab_bullet_tip.stl src/nasal_swab.scad
-openscad -p src/nasal_swab.json -P lock_handle -o lock_handle.stl src/nasal_swab.scad
+openscad -p cad/nasal_swab.json -P nasal_swab_bullet_tip -o nasal_swab_bullet_tip.stl cad/nasal_swab.scad
+openscad -p cad/nasal_swab.json -P lock_handle -o lock_handle.stl cad/nasal_swab.scad
 ```
 
 The `render` parameter picks the part (`nasal_swab`, `lock_handle` or `both`) and
@@ -53,7 +53,7 @@ checks the geometry only, not how a print performs.
 
 ### Print and cure
 
-- **Swab heads:** resin. `slicerProfile/PrusaNasalSwabs.ini` is for an Original
+- **Swab heads:** resin. `cad/nasal_swab_sl1.ini` is for an Original
   Prusa SL1 with Prusa Orange Tough: 0.05 mm layers, 7.5 s exposure (35 s for the
   first layers), supports and pad on. Load it in PrusaSlicer with
   File > Import > Import Config.

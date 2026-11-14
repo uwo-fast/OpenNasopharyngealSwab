@@ -2,7 +2,7 @@
 
 usage: python3 tests/check_presets.py [OPENSCAD]
 
-Each preset in src/nasal_swab.json, and tests/breakpoint.scad, is rendered
+Each preset in cad/nasal_swab.json, and tests/breakpoint.scad, is rendered
 with --hardwarnings, so any warning fails the check. The breakpoint slice
 holds the hole the swab breaks at, so moving or resizing the hole changes its
 volume even where the whole swab's size and volume would not show it. Sizes are checked to within 0.01 mm and volumes to
@@ -24,9 +24,9 @@ import sys
 import tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SCAD = os.path.join(ROOT, "src", "nasal_swab.scad")
+SCAD = os.path.join(ROOT, "cad", "nasal_swab.scad")
 BREAKPOINT = os.path.join(ROOT, "tests", "breakpoint.scad")
-PRESETS = os.path.join(ROOT, "src", "nasal_swab.json")
+PRESETS = os.path.join(ROOT, "cad", "nasal_swab.json")
 
 # preset: (size x, y, z in mm, volume in mm³), from OpenSCAD 2026.10.15
 EXPECTED = {
