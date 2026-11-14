@@ -23,7 +23,14 @@ This repository hosts the open-source design files, instructions, and validation
 
 1. **Swab Design Files:**
    - Parametric OpenSCAD files for the swab and handle.
-   - STL files for SLA and FFF printers.
+   - Customizer presets in `src/nasal_swab.json` for the bullet tip, the cone tip
+     and the lock handle. Export each to STL with
+     `openscad -p src/nasal_swab.json -P nasal_swab_bullet_tip -o outputs/nasal_swab_bullet_tip.stl src/nasal_swab.scad`
+     (the other presets are `nasal_swab_cone_tip` and `lock_handle`).
+   - The PrusaSlicer profile used for the swab heads,
+     `slicerProfile/PrusaNasalSwabs.ini`: Original Prusa SL1, Prusa Orange Tough,
+     0.05 mm layers, 7.5 s exposure (35 s for the first layers), supports and pad
+     on. Load it with File > Import > Import Config.
 2. **UV Curing System:**
    - Design files for modular PCBs and 3D printable components.
    - Assembly instructions and parts list.

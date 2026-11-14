@@ -1,0 +1,3 @@
+# Exports and slices made from src/nasal_swab.scad
+outputs/
+*.sl1
