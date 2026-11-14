@@ -31,14 +31,13 @@ This repository hosts the open-source design files, instructions, and validation
      `slicerProfile/PrusaNasalSwabs.ini`: Original Prusa SL1, Prusa Orange Tough,
      0.05 mm layers, 7.5 s exposure (35 s for the first layers), supports and pad
      on. Load it with File > Import > Import Config.
-2. **UV Curing System:**
-   - Design files for modular PCBs and 3D printable components.
-   - Assembly instructions and parts list.
+2. **UV Curing System:** the LED boards and brackets are now in their own
+   repository, [uwo-fast/uv-curing-box](https://github.com/uwo-fast/uv-curing-box).
 
 ## Bill of Materials (BOM)
 
 - **Swabs:** UV resin for swab heads and thermoplastics (e.g., PLA, PETG) for handles.
-- **UV System:** Modular PCB components, UV LEDs, 3D printed brackets, and power supply.
+- **UV System:** see [uwo-fast/uv-curing-box](https://github.com/uwo-fast/uv-curing-box).
 
 ## How to Use
 
@@ -47,11 +46,6 @@ This repository hosts the open-source design files, instructions, and validation
 1. Print swab heads using SLA 3D printers.
 2. Print handles using FFF 3D printers.
 3. Assemble and cure swabs in the UV curing system.
-
-### UV Curing System Assembly
-
-1. Solder PCBs and assemble the modular curing box.
-2. Connect power and ensure system functionality with a multimeter.
 
 ### Validation
 
