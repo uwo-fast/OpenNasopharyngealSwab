@@ -1,6 +1,6 @@
 {
     "parameterSets": {
-        "nasal_swab_bullet tip": {
+        "nasal_swab_bullet_tip": {
             "render": "nasal_swab",
             "tip_type": "bullet"
         },
