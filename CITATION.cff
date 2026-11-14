@@ -13,7 +13,7 @@ authors:
     given-names: "Nagendra G."
   - family-names: "Pearce"
     given-names: "Joshua M."
-url: "https://github.com/uwo-fast/OpenNasopharyngealSwab"
+url: "https://github.com/uwo-fast/nasopharyngeal-swab"
 preferred-citation:
   type: article
   title: "Parametric nasopharyngeal swab for sampling COVID-19 and other respiratory viruses: Open source design, SLA 3-D printing and UV curing system"
