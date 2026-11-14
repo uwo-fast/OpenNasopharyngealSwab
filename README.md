@@ -1,75 +1,89 @@
-# Open Source Nasopharyngeal Swab and UV Curing System
+# Open source nasopharyngeal swab
 
-This repository hosts the open-source design files, instructions, and validation results for a parametric nasopharyngeal swab and UV curing system. The designs are tailored for distributed manufacturing using accessible 3D printing technologies. Originally developed to address swab shortages during the COVID-19 pandemic, this project aims to provide a low-cost, scalable solution for clinical testing and other medical applications.
+A parametric nasopharyngeal swab for sampling COVID-19 and other respiratory
+viruses, designed to be made locally on a resin (SLA) printer. The swab head is
+printed in resin and cured under UV, then pressed into a handle printed on an
+ordinary filament (FFF) printer.
 
-![View of Swab on Build Plate in Slicer](slicerProfile/Prusa_Build_Plate_Capture.JPG)
+It was developed in 2020, when swabs were short, and published in Gallup et al.
+(2020), below. The paper reports mechanical and synthetic-mucus tests, and states
+that the swabs need clinical verification before widespread use. This repository
+does not change that: **the design has not been clinically validated.**
 
-## Features
+![A plate of swabs standing upright on the Original Prusa SL1's build plate, in PrusaSlicer](slicerProfile/Prusa_Build_Plate_Capture.JPG)
 
-- **Parametric Design:** Fully customizable in OpenSCAD to adapt swab and handle features for specific needs.
-  - Tested with [github.com/CameronBrooks11/OpenSCAD-Batch-Export](https://github.com/CameronBrooks11/OpenSCAD-Batch-Export)
-- **Distributed Manufacturing:** Designed for SLA 3D printers and modular UV curing systems, enabling local production with low-cost, accessible equipment.
-- **Validated Performance:** Mechanical testing ensures durability and safety for clinical applications.
-- **Open Source:** Licensed under GNU GPL v3.0 and CERN OHL v1.2 for maximum accessibility and collaboration.
+## What's here
 
-## Cost Overview
+| Path | What it is |
+| --- | --- |
+| `src/nasal_swab.scad` | The OpenSCAD model: the swab (tip, breakable body and lock base) and the lock handle it fits into. |
+| `src/nasal_swab.json` | Customizer presets: `nasal_swab_bullet_tip`, `nasal_swab_cone_tip` and `lock_handle`. |
+| `slicerProfile/PrusaNasalSwabs.ini` | The PrusaSlicer settings the swab heads were sliced with. |
+| `misc/tong_handle.stl` | The tong-style handle, an alternative to the lock handle. No source here. |
+| `misc/durability_test_tube.stl` | A 10 × 10 × 42 mm test part. No source here. |
 
-- Nasopharyngeal Swabs:
-  - Press-fit handle: ~$0.06/swab
-  - Tong-style handle: ~$0.11/swab
-- Modular UV Curing System: $45 total
+The UV curing box the paper describes is in its own repository,
+[uwo-fast/uv-curing-box](https://github.com/uwo-fast/uv-curing-box).
 
-## Included Components
+## Making swabs
 
-1. **Swab Design Files:**
-   - Parametric OpenSCAD files for the swab and handle.
-   - Customizer presets in `src/nasal_swab.json` for the bullet tip, the cone tip
-     and the lock handle. Export each to STL with
-     `openscad -p src/nasal_swab.json -P nasal_swab_bullet_tip -o outputs/nasal_swab_bullet_tip.stl src/nasal_swab.scad`
-     (the other presets are `nasal_swab_cone_tip` and `lock_handle`).
-   - The PrusaSlicer profile used for the swab heads,
-     `slicerProfile/PrusaNasalSwabs.ini`: Original Prusa SL1, Prusa Orange Tough,
-     0.05 mm layers, 7.5 s exposure (35 s for the first layers), supports and pad
-     on. Load it with File > Import > Import Config.
-2. **UV Curing System:** the LED boards and brackets are now in their own
-   repository, [uwo-fast/uv-curing-box](https://github.com/uwo-fast/uv-curing-box).
+### Export the parts
 
-## Bill of Materials (BOM)
+Open `src/nasal_swab.scad` in OpenSCAD and pick a preset in the Customizer, or
+export from the command line:
 
-- **Swabs:** UV resin for swab heads and thermoplastics (e.g., PLA, PETG) for handles.
-- **UV System:** see [uwo-fast/uv-curing-box](https://github.com/uwo-fast/uv-curing-box).
+```sh
+openscad -p src/nasal_swab.json -P nasal_swab_bullet_tip -o nasal_swab_bullet_tip.stl src/nasal_swab.scad
+openscad -p src/nasal_swab.json -P lock_handle -o lock_handle.stl src/nasal_swab.scad
+```
 
-## How to Use
+The `render` parameter picks the part (`nasal_swab`, `lock_handle` or `both`) and
+`tip_type` the tip (`bullet` or `cone`). The tip, body, base and handle sections of
+the file set every dimension, each commented with its recommended value.
 
-### Swab Fabrication
+The model was tested with
+[scadbatch](https://github.com/CameronBrooks11/scadbatch) for batch export.
 
-1. Print swab heads using SLA 3D printers.
-2. Print handles using FFF 3D printers.
-3. Assemble and cure swabs in the UV curing system.
+### Print and cure
 
-### Validation
+- **Swab heads:** resin. `slicerProfile/PrusaNasalSwabs.ini` is for an Original
+  Prusa SL1 with Prusa Orange Tough: 0.05 mm layers, 7.5 s exposure (35 s for the
+  first layers), supports and pad on. Load it in PrusaSlicer with
+  File > Import > Import Config.
+- **Handles:** a filament printer.
+- **Curing:** under UV, for example in the
+  [UV curing box](https://github.com/uwo-fast/uv-curing-box). The paper tested
+  tensile strength at four curing times.
 
-- Follow the provided mechanical testing protocols for tensile strength and break points.
-- Conduct clinical testing in accordance with FDA or regional guidelines.
+### Cost
 
-## Licensing
+From the paper: $0.0603 a swab with the press-fit handle, $0.1138 with the
+tong handle, and $45.42 for the UV curing system.
 
-This project is licensed under:
+## Origin and licence
 
-- GNU General Public License (GPL) v3.0
-- CERN Open Hardware License (OHL) v1.2
+The swab model is by Adam Pringle of the Michigan Tech Open Sustainability
+Technology (MOST) group, dated 2020-04-21 in the source; Cameron K. Brooks of the
+FAST Research Group at Western reformatted it and replaced the deprecated
+`assign()`. The design files were first published on the Open Science Framework,
+<https://osf.io/z5jgu/>, and in
+[ngallup4/Nasal-Swab-Files](https://github.com/ngallup4/Nasal-Swab-Files).
 
-## Contributing
-
-Contributions to improve the design, validation, or documentation are welcome. Please open an issue or submit a pull request.
+The paper releases the design under the GNU General Public License v3.0 and the
+CERN Open Hardware Licence v1.2. This repository's [`LICENSE`](LICENSE) is the
+GPL-3.0 text.
 
 ## Citation
 
-If you use this project in your work, please cite the original paper:  
-Gallup, N., Pringle, A. M., Oberloier, S., Tanikella, N. G., & Pearce, J. M. (2020). *Parametric nasopharyngeal swab for sampling COVID-19 and other respiratory viruses: Open source design, SLA 3-D printing and UV curing system*. HardwareX, 8, e00135.
+If you use this design, please cite the paper (also in
+[`CITATION.cff`](CITATION.cff)):
 
-## Acknowledgments
+> Gallup, N., Pringle, A. M., Oberloier, S., Tanikella, N. G., & Pearce, J. M.
+> (2020). Parametric nasopharyngeal swab for sampling COVID-19 and other respiratory
+> viruses: Open source design, SLA 3-D printing and UV curing system.
+> *HardwareX*, 8, e00135. <https://doi.org/10.1016/j.ohx.2020.e00135>
 
-This work was supported by the Witte Foundation and benefited from the contributions of numerous collaborators listed in the publication.
+## Contributing
 
-For more details, visit the [source paper](https://doi.org/10.1016/j.ohx.2020.e00135) or access original files on the [Open Science Framework (OSF)](https://osf.io/z5jgu/).
+Issues and pull requests are welcome. See the organization
+[contribution guide](https://github.com/uwo-fast/.github/blob/main/CONTRIBUTING.md).
