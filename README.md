@@ -77,8 +77,8 @@ FAST Research Group at Western reformatted it and replaced the deprecated
 [ngallup4/Nasal-Swab-Files](https://github.com/ngallup4/Nasal-Swab-Files).
 
 The paper releases the design under the GNU General Public License v3.0 and the
-CERN Open Hardware Licence v1.2. This repository's [`LICENSE`](LICENSE) is the
-GPL-3.0 text.
+CERN Open Hardware Licence v1.2. [`LICENSING.md`](LICENSING.md) says which files
+each covers, and both texts are in [`LICENSES/`](LICENSES).
 
 ## Citation
 
