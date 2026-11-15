@@ -20,7 +20,7 @@ does not change that: **the design has not been clinically validated.**
 | `cad/nasal_swab.json` | Customizer presets: `nasal_swab_bullet_tip`, `nasal_swab_cone_tip` and `lock_handle`. |
 | `cad/nasal_swab_sl1.ini` | The PrusaSlicer settings the swab heads were sliced with. |
 | `cad/tong_handle.stl` | The tong-style handle, an alternative to the lock handle. No source here. |
-| `cad/durability_test_tube.stl` | A 10 × 10 × 42 mm test part. No source here. |
+| `cad/durability_test_tube.stl` | A 10 x 10 x 42 mm test part. No source here. |
 
 The UV curing box the paper describes is in its own repository,
 [uwo-fast/uv-curing-box](https://github.com/uwo-fast/uv-curing-box).
@@ -40,9 +40,6 @@ openscad -p cad/nasal_swab.json -P lock_handle -o lock_handle.stl cad/nasal_swab
 The `render` parameter picks the part (`nasal_swab`, `lock_handle` or `both`) and
 `tip_type` the tip (`bullet` or `cone`). The tip, body, base and handle sections of
 the file set every dimension, each commented with its recommended value.
-
-The model was tested with
-[scadbatch](https://github.com/CameronBrooks11/scadbatch) for batch export.
 
 ### Check the model
 
